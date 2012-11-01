@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
-gem 'omniauth-mygov', :git => 'git@github.com:GSA-OCSIT/omniauth-mygov.git'
+gem 'omniauth-mygov', :git => 'https://github.com/GSA-OCSIT/omniauth-mygov.git'
 gem 'devise'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

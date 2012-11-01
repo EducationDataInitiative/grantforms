@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:GSA-OCSIT/omniauth-mygov.git
+  remote: https://github.com/GSA-OCSIT/omniauth-mygov.git
   revision: a6e035a20b819d68c4e5142c80e4bb8004a672e4
   specs:
     omniauth-mygov (0.0.1)
