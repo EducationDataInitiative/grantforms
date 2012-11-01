@@ -56,6 +56,12 @@ GEM
       multi_json (~> 1.0)
     faraday (0.8.4)
       multipart-post (~> 1.1)
+    haml (3.1.7)
+    haml-rails (0.3.5)
+      actionpack (>= 3.1, < 4.1)
+      activesupport (>= 3.1, < 4.1)
+      haml (~> 3.1)
+      railties (>= 3.1, < 4.1)
     hashie (1.2.0)
     hike (1.2.1)
     httpauth (0.2.0)
@@ -89,6 +95,8 @@ GEM
     orm_adapter (0.0.5)
     pg (0.14.1)
     polyglot (0.3.3)
+    quiet_assets (1.0.1)
+      railties (~> 3.1)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -155,9 +163,11 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
+  haml-rails
   jquery-rails
   omniauth-mygov!
   pg
+  quiet_assets
   rails (= 3.2.8)
   rspec-rails
   sass-rails (~> 3.2.3)

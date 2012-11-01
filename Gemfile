@@ -3,12 +3,15 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.8'
 gem 'omniauth-mygov', :git => 'https://github.com/GSA-OCSIT/omniauth-mygov.git'
 gem 'devise'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development do
   gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'haml-rails'
+  gem 'quiet_assets'
 end
 
 group :production do
@@ -18,7 +21,6 @@ end
 group :test do
   gem 'rspec-rails'
 end
-
 
 # Gems used only for assets and not required
 # in production environments by default.
