@@ -1,6 +1,11 @@
 Grants::Application.routes.draw do
+  devise_for :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
+
+  # Need a root path
+  root :to => "home#index"
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
