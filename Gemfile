@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.8'
 gem 'omniauth-mygov', :git => 'https://github.com/GSA-OCSIT/omniauth-mygov.git'
 gem 'devise'
+gem 'rails_admin'
+gem 'cancan'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -12,6 +14,8 @@ group :development do
   gem 'rspec-rails'
   gem 'haml-rails'
   gem 'quiet_assets'
+  gem 'hpricot'
+  gem 'ruby_parser'
 end
 
 group :production do
