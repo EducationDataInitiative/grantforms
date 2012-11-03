@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '1.9.3'
 gem 'rails', '3.2.8'
 gem 'omniauth-mygov', :git => 'https://github.com/GSA-OCSIT/omniauth-mygov.git'
 gem 'devise'
@@ -12,7 +13,6 @@ gem 'cancan'
 =======
 gem 'will_paginate', '~> 3.0.3'
 gem 'ransack', '~> 0.7.0'
->>>>>>> Added ability to view, index, search grants
 
 group :development do
   gem 'sqlite3'
