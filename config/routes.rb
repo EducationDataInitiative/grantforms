@@ -1,4 +1,9 @@
 Grants::Application.routes.draw do
+<<<<<<< HEAD
+=======
+  resources :grants
+
+>>>>>>> Added ability to view, index, search grants
   devise_for :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
