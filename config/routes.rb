@@ -5,6 +5,6 @@ Grants::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   # Need a root path
-  root :to => "home#index"
+  root :to => "grants#index"
 
 end

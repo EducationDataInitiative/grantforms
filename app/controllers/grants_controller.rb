@@ -2,6 +2,12 @@ class GrantsController < ApplicationController
   # Requires that the user be signed in to edit
   before_filter :authenticate_user!, only: [:edit, :update]
   
+  def index
+    # For Ransack search
+    @q = Grant.search(params[:q])
+    @grants = @q.result(:distinct => true).paginate(page: params[:page])
+  end
+  
   def new
     @grant = Grant.new
   end
@@ -17,12 +23,6 @@ class GrantsController < ApplicationController
       else
         render 'new'
       end
-  end
-  
-  def index
-    # For Ransack search
-    @q = Grant.search(params[:q])
-    @grants = @q.result(:distinct => true).paginate(page: params[:page])
   end
   
   def edit

@@ -213,11 +213,8 @@ DEPENDENCIES
   pg
   quiet_assets
   rails (= 3.2.8)
-<<<<<<< HEAD
   rails_admin
-=======
   ransack (~> 0.7.0)
->>>>>>> Added ability to view, index, search grants
   rspec-rails
   ruby_parser
   sass-rails (~> 3.2.3)
