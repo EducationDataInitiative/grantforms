@@ -1,11 +1,13 @@
 !!!
 %html
   %head
-    %title Grants
+    %title GrantED
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    %p.notice= notice
-    %p.alert= alert
+    .twelve.columns
+      .row
+        %h2
+          GrantED
     = yield

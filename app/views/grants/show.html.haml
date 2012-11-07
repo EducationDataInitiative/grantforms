@@ -1,3 +1,16 @@
-%h1= @grant.name
-%p= @grant.description
-%a{:href => "/grants/new"} Create a new grant
+.twelve.columns
+  .row
+    %h3
+      = @grant.name
+  .row
+    %p
+      = @grant.description
+  .row
+    %p
+      More information coming soon...
+  .row
+    %ul
+      %li
+        Apply for this grant
+      %li
+        = link_to 'Back', root_path
