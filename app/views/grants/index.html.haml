@@ -1,0 +1,14 @@
+%h1 All Grants
+%h2 Search
+= search_form_for @q do |f|
+  = f.label :name_cont
+  = f.text_field :name_cont
+  %br/
+  = f.label :description_cont
+  = f.text_field :description_cont
+  = f.submit
+= will_paginate
+%ul
+  = render @grants
+= will_paginate
+%a{:href => "/grants/new"} Create a new grant

@@ -1,0 +1,6 @@
+%h1 Edit a Grant
+%div
+  %div
+    = form_for(@grant) do |f|
+      = render 'fields', f: f
+      = f.submit "Save changes to grant"

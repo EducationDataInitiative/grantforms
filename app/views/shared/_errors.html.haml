@@ -1,0 +1,7 @@
+- if @grant.errors.any?
+  %div
+    %div
+      Please correct the following #{pluralize(@grant.errors.count, "error")}.
+    %ul
+      - @grant.errors.full_messages.each do |msg|
+        %li= msg
