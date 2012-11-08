@@ -1,21 +1,27 @@
-.twelve.columns
-  .row
+.row
+  .twelve.columns
     %h3 
       All Grants
-  .row
+.row
+  .twelve.columns
     %h4
       Search
-  .row
-    = search_form_for @q do |f|
+.row
+  = search_form_for @q do |f|
+    .four.columns
       = f.label :name_cont
       = f.text_field :name_cont
+    .four.columns
       = f.label :description_cont
       = f.text_field :description_cont
+    .four.columns{:style => 'padding-top: 20px;'}
       = f.submit
-  .row
+.row
+  .twelve.columns
     = will_paginate(@grants)
-  .row
-    - if @grants.any?
+.row
+  - if @grants.any?
+    .twelve.columns
       %table.twelve
         %thead
           %tr
@@ -27,8 +33,10 @@
               Actions
         %tbody
           = render @grants
-    - else
+  - else
+    .twelve.columns
       %p
         No grants found.
-  .row
+.row
+  .twelve.columns
     = will_paginate
