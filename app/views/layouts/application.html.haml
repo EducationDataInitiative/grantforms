@@ -6,8 +6,8 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    .row
-      .twelve.columns
-        %h2
-          GrantED
+    %ul.nav-bar
+      %li.active
+        = link_to 'GrantED', root_path
+    %div
     = yield
