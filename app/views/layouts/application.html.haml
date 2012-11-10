@@ -9,5 +9,10 @@
     %ul.nav-bar
       %li.active
         = link_to 'GrantED', root_path
+      %li{:style => 'float: right;'}
+        - if current_user
+          = link_to "Sign out", sign_out_path
+        - else
+          = link_to "Connect your MyGov account", "/users/auth/mygov/"
     %div
     = yield

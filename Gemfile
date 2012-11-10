@@ -6,8 +6,6 @@ gem 'omniauth-mygov', :git => 'https://github.com/GSA-OCSIT/omniauth-mygov.git'
 gem 'devise'
 gem 'rails_admin'
 gem 'cancan'
-
-
 gem 'will_paginate', '~> 3.0.3'
 gem 'ransack', '~> 0.7.0'
 
