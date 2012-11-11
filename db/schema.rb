@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121111170114) do
+ActiveRecord::Schema.define(:version => 20121111181250) do
+
+  create_table "grant_applications", :force => true do |t|
+    t.integer  "grant_id"
+    t.integer  "organization_id"
+    t.integer  "user_id"
+    t.text     "data"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "grant_applications", ["grant_id"], :name => "index_grant_applications_on_grant_id"
+  add_index "grant_applications", ["organization_id"], :name => "index_grant_applications_on_organization_id"
+  add_index "grant_applications", ["user_id"], :name => "index_grant_applications_on_user_id"
 
   create_table "grants", :force => true do |t|
     t.string   "name"

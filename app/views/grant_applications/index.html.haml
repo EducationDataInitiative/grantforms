@@ -1,0 +1,17 @@
+.row
+  .twelve.columns
+    %h3
+      Your past grant applications
+.row
+  .twelve.columns
+    %table.twelve
+      %thead
+        %tr
+          %th
+            Grant name
+          %th
+            Organization name
+          %th
+            Application date
+      %tbody
+        = render @grant_applications

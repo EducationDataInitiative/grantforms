@@ -1,0 +1,71 @@
+{
+  "form": {
+    "title": "Application for Federal Assistance",
+    "number": "SF-424"
+    "form_fields": [
+      {
+        "name": "submission_type", "field_type": "select", "label": "Type of submission", "options": ["Preapplication", "Application", "Changed/Corrected Application"], "is_required": true
+      }, {
+        "name": "application_type", "field_type": "select", "label": "Type of application", "options": ["New", "Continuation", "Revision"], "is_required": true
+      }, {
+        "name": "application_type_revision_letters", "field_type": "string", "label": "If revision, select appropriate letter(s)"
+      }, {
+        "name": "application_type_other", "field_type": "string", "label": "Other (specify)"
+      }, {
+        "name": "applicant_identifier", "field_type": "string", "label": "Applicant Identifier"
+      }, {
+        "name": "federal_entity_identifier", "field_type": "string", "label": "Federal Entity Identifier"
+      }, {
+        "name": "federal_award_identifier", "field_type": "string", "label": "Federal Award Identifier"
+      }, {
+        "name": "date_received_by_state", "field_type": "date", "label": "Date received by State"
+      }, {
+        "name": "state_application_identifier", "field_type": "string", "label": "State Application Identifier"
+      }, {
+        "name": "organization_name", "field_type": "string", "label": "Legal name", "is_required": true
+      }, {
+        "name": "organization_ein", "field_type": "string", "label": "Employer/Taxpayer Identification Number (EIN/TIN)", "is_required": true
+      }, {
+        "name": "organization_duns", "field_type": "string", "label": "Organizational DUNS", "is_required": true
+      }, {
+        "name": "organization_address", "field_type": "string", "label": "Address", "is_required": true
+      }, {
+        "name": "organization_address_2", "field_type": "string", "label": "Address 2"
+      }, {
+        "name": "organization_city", "field_type": "string", "label": "City", "is_required": true
+      }, {
+        "name": "organization_county", "field_type": "string", "label": "County/Parish"
+      }, {
+        "name": "organization_state", "field_type": "string", "label": "State", "is_required": true
+      }, {
+        "name": "organization_province", "field_type": "string", "label": "Province"
+      }, {
+        "name": "organization_country", "field_type": "string", "label": "Country", "is_required": true
+      }, {
+        "name": "organization_zip", "field_type": "string", "label": "Zip / Postal Code", "is_required": true
+      }, {
+        "name": "organization_department_name", "field_type": "string", "label": "Department name"
+      }, {
+        "name": "organization_division_name", "field_type": "string", "label": "Division name"
+      }, {
+        "name": "contact_prefix", "field_type": "string", "label": "Prefix"
+      }, {
+        "name": "contact_first_name", "field_type": "string", "label": "First name", "is_required": true
+      }, {
+        "name": "contact_middle_name", "field_type": "string", "label": "Middle name"
+      }, {
+        "name": "contact_last_name", "field_type": "string", "label": "Last name", "is_required": true
+      }, {
+        "name": "contact_suffix", "field_type": "string", "label": "Suffix"
+      }, {
+        "name": "contact_title", "field_type": "string", "label": "Title"
+      }, {
+        "name": "contact_phone_number", "field_type": "string", "label": "Telephone number", "is_required": true
+      }, {
+        "name": "contact_fax_number", "field_type": "string", "label": "Fax number"
+      }, {
+        "name": "contact_email", "field_type": "string", "label": "Email address", "is_required": true
+      }
+    ]
+  }
+}

@@ -14,6 +14,6 @@
   .twelve.columns
     %ul
       %li
-        Apply for this grant
+        = link_to 'Apply for this grant', new_grant_application_path(@grant)
       %li
         = link_to 'Back', root_path

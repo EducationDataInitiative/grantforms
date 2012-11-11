@@ -20,6 +20,8 @@
           %ul.flyout
             %li
               = link_to 'Organizations', organizations_path
+            %li
+              = link_to 'Applications', applications_path
       - else
         %li{:style => 'float: right;'}
           = link_to "Connect your MyGov account", "/users/auth/mygov/"

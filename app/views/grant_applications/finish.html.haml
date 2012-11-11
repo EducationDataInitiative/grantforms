@@ -1,0 +1,7 @@
+.row
+  .twelve.columns
+    %p
+      - if flash[:notice]
+        = flash[:notice]
+      - elsif flash[:error]
+        = flash[:error]

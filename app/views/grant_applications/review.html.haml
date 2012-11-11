@@ -1,0 +1,11 @@
+.row
+  .twelve.columns
+    %h3
+      Apply for Grant: #{@grant.name}
+    %h4
+      Review
+.row
+  .twelve.columns
+    %p
+      Please review the information you specified for this grant.  When you're finished, click submit to submit your grant application.
+      = button_to 'Submit your grant application', grant_application_finish_path(@grant, @grant_application)

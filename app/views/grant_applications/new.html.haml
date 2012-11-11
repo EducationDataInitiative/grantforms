@@ -1,0 +1,25 @@
+.row
+  .twelve.columns
+    %h3
+      Apply for Grant: #{@grant.name}
+    %h4
+      Organization
+.row
+  .five.columns
+    %p
+      Select an existing organization
+    %p
+      = form_for @grant_application do |form|
+        = form.select :organization_id, options_from_collection_for_select(@user.organizations, :id, :name), :include_blank => true
+        = form.submit
+  .two.columns
+    %h4
+      OR
+  .five.columns
+    %p
+      Enter information for a new organization
+    %p
+      = form_for @grant_application do |form|
+        = form.fields_for :organization_attributes, @grant_application.build_organization(:user_id => @user.id) do |organization_fields|
+          = render :partial => 'organizations/form', :locals => {:form => organization_fields}
+        = form.submit

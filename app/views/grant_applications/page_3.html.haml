@@ -1,0 +1,45 @@
+.row
+  .twelve.columns
+    %h3
+      Apply for Grant: #{@grant.name}
+    %h4
+      More information
+.row
+  .twelve.columns
+    %p
+      Here's more information we need from you to apply for this grant.
+    = form_tag grant_application_path(@grant, @grant_application), :method => :put do
+      = hidden_field_tag "grant_application_page", "page_3"
+      %p
+        = label_tag "Eligible Applicant Type"
+        = select_tag "grant_application[data][eligible_applicant_type]", options_for_select(["LEA", "Nonprofit w/LEA", "Nonprofit w/consortium of schools"]), :include_blank => true
+      %p
+        = label_tag "multple_i3_applications" do
+          = check_box_tag "grant_application[data][multiple_i3_applications]"
+          Have you applied for more than one i3 grants?
+      %p
+        = label_tag "Pre-application PR award number"
+        = text_field_tag "grant_application[data][preapplication_pr_award_number]"
+      %p
+        = label_tag "Type of grant request"
+        = select_tag "grant_application[data][grant_request_type]", options_for_select(["Development"]), :include_blank => true
+      %p
+        = label_tag "Length of requested grant award"
+        = select_tag "grant_application[data][grant_award_length]", options_for_select([["3 years", "3"], ["4 years", "4"], ["5 years", 5]]), :include_blank => true
+      %p
+        = label_tag "Select the ONE Absolute Priority (AP) that you are addressing in your application"
+        = select_tag "grant_application[data][absolute_priority]", options_for_select([["Effective Teachers and Principals", "AP1"], ["Promoting STEM Education", "AP2"], ["Improving Parent and Family Engagement", "AP3"], ["Persistently Low-Performing Schools", "AP4"], ["Achievement and Graduation Rates", "AP5"]]), :include_blank => true
+      %p
+        = label_tag "Select up to two Competitive Preference Priorities (CPP) that you are addressing in your application"
+        = select_tag "grant_application[data][competitive_preference_priorities]", options_for_select([["CPP 6: Innovations for Improving Early Learning Outcomes (zero or one point)", "CPP6"], ["CPP 7: Innovations that Support College Access and Success (zero or one point)", "CPP7"], ["CPP 8: Innovations to Address the Unique Learning Needs of Students with Disabilities and Limited English Proficient Students (zero or one Point)", "CPP8"], ["CPP 9: Improving Productivity (zero or one point)", "CPP9"], ["CPP 10: Technology (zero or one point)", "CPP10"]]), :multiple => true
+      %p
+        = label_tag "Total number of students to be served by the proposed project"
+        = text_field_tag "grant_application[data][total_students_served]"
+      %p
+        = label_tag "Student grade levels to be served by the proposed project (select all that apply):"
+        = select_tag "grant_application[data][grade_levels_served]", options_for_select([["Birth-Pre K", "prek"], ["Kindergarten", "K"], ["First", "1"], ["Second", "2"], ["Third", "3"], ["Fourth", "4"], ["Fifth", "5"], ["Sixth", "6"], ["Seventh", "7"], ["Eighth", "8"], ["Ninth", "9"], ["Tenth", "10"], ["Eleventh", "11"], ["Twelfth", "12"], ["Post-Secondary", "postsecondary"]]), :multiple => true
+      %p
+        = label_tag "Project Description"
+        In 2000 characters or less, please provide a brief description of the project you wish to propose. Be sure to include a summary of project objectives and expected outcomes, along with any special project features.
+        = text_area_tag "grant_application[data][project_description]"
+      = submit_tag "Submit"

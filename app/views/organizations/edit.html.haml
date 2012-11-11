@@ -7,5 +7,5 @@
       = flash[:error] if flash[:error]
       = render :partial => 'form', :locals => {:form => form}
       %p
-        = submit_tag 'Submit'
+        = form.submit
         = link_to 'Cancel', organizations_path 

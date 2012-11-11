@@ -1,0 +1,92 @@
+.row
+  .twelve.columns
+    %h3
+      Apply for Grant: #{@grant.name}
+    %h4
+      More information
+.row
+  .twelve.columns
+    %p
+      Here's more information we need from you to apply for this grant.
+    = form_tag grant_application_path(@grant, @grant_application), :method => :put do
+      = hidden_field_tag "grant_application_page", "page_2"
+      %p
+        Applicant type
+        - applicant_types.each do |applicant_type|
+          = label_tag applicant_type.parameterize do
+            = check_box_tag "grant_application[data][#{applicant_type.parameterize}]", applicant_type.parameterize
+            = applicant_type
+      %p
+        = label_tag "Applicant Type Other"
+        = text_field_tag "grant_application[data][applicant_type][other_specify]"
+      %p
+        = label_tag "Name of Federal Agency"
+        = text_field_tag "grant_application[data][name_of_federal_agency]"
+      %p
+        = label_tag "Catalog of Federal Domestic Assistance Number"
+        = text_field_tag "grant_application[data][cfda_number]"
+      %p
+        = label_tag "CFDA Title"
+        = text_field_tag "grant_application[data][cfda_title]"
+      %p
+        = label_tag "Funding Opportunity Number"
+        = text_field_tag "grant_application[data][funding_opportunity_number]"
+      %p
+        = label_tag "Funding Opportunity Title"
+        = text_field_tag "grant_application[data][funding_opportunity_title]"
+      %p
+        = label_tag "Competition Identification Number"
+        = text_field_tag "grant_application[data][competition_identification_number]"
+      %p
+        = label_tag "Competition Identification Title"
+        = text_field_tag "grant_application[data][competition_identification_title]"
+      %p
+        = label_tag "Areas affected by project (Cities, Counties, States, etc.)"
+        = text_area_tag "grant_application[data][areas_affected]"
+      %p
+        = label_tag "Descriptive Title of Applicant's Project"
+        = text_area_tag "grant_application[data][project_description]"
+      %p
+        = label_tag "Congressional District - Applicant"
+        = text_field_tag "grant_application[data][applicant_congressional_district]"
+      %p
+        = label_tag "Congressional District - Program/Project"
+        = text_area_tag "grant_application[data][project_congressional_district]"
+      %p
+        = label_tag "Proposed Project Start Date"
+        = select_date Date.current, :prefix => 'grant_application[data][proposed_start_date]'
+      %p
+        = label_tag "Proposed Project End Date"
+        = select_date Date.current, :prefix => 'grant_application[data][proposed_start_date]'      
+      %p
+        = label_tag "Estimated Funding - Federal"
+        = text_field_tag "grant_application[data][estimated_funding_federal]"
+      %p
+        = label_tag "Estimated Funding - Applicant"
+        = text_field_tag "grant_application[data][estimated_funding_applicant]"
+      %p
+        = label_tag "Estimated Funding - State"
+        = text_field_tag "grant_application[data][estimated_funding_state]"
+      %p
+        = label_tag "Estimated Funding - Local"
+        = text_field_tag "grant_application[data][estimated_funding_local]"
+      %p
+        = label_tag "Estimated Funding - Other"
+        = text_field_tag "grant_application[data][estimated_funding_other]"  
+      %p
+        = label_tag "Estimated Funding - Program Income"
+        = text_field_tag "grant_application[data][estimated_funding_program_income]"
+      %p
+        = label_tag "Estimated Funding - Total"
+        = text_field_tag "grant_application[data][estimated_funding_total]"
+      %p
+        = label_tag "Is application subject to review by state under Executive Order 12372 process?"
+        = select_tag "grant_application[data][subject_to_review]", options_for_select([["This application was made available to the State under the Executive Order 12372 Process for review on", "subject_and_reviewed"], ["Program is subject to E.O. 12372 but has not been selected by the State for review.", "subject_and_not_reviewed"], ["Program is not covered by E.O. 12372.", "not_subject"]])
+        = select_date Date.current, :prefix => 'grant_application[data][proposed_start_date]'
+      %p
+        = label_tag do
+          = check_box_tag "grant_application[data][delinquent_debt]"
+          Is applicant delinquent on any federal debt? If yes, provide details.
+          = text_area_tag "grant_application[data][delinquent_debt_details]"      
+      = submit_tag 'Submit'
+        
