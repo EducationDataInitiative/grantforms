@@ -7,7 +7,8 @@ Grants::Application.routes.draw do
     get 'sign_out', :to => 'devise/sessions#destroy', :as => :sign_out
   end
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-
+  resources :organizations
+  
   # Need a root path
   root :to => "grants#index"
 end

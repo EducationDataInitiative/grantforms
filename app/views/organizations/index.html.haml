@@ -1,0 +1,20 @@
+.row
+  .twelve.columns
+    %h3
+      Your organizations
+.row
+  .twelve.columns
+    = link_to 'Add New Organization', new_organization_path
+    %br
+    %br
+    %table.twelve
+      %thead
+        %tr
+          %th
+            Legal Name
+          %th
+            DUNS Number
+          %th
+            Actions
+      %tbody
+        = render @organizations

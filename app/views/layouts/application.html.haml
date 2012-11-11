@@ -9,10 +9,18 @@
     %ul.nav-bar
       %li.active
         = link_to 'GrantED', root_path
-      %li{:style => 'float: right;'}
-        - if current_user
+      - if current_user
+        %li{:style => 'float: right;'}
           = link_to "Sign out", sign_out_path
-        - else
+        %li.has-flyout{:style => 'float: right;'}
+          %a{:href => "#"}
+            Options
+          %a.flyout-toggle{:href => "#"}
+            %span
+          %ul.flyout
+            %li
+              = link_to 'Organizations', organizations_path
+      - else
+        %li{:style => 'float: right;'}
           = link_to "Connect your MyGov account", "/users/auth/mygov/"
-    %div
     = yield

@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :remember_me, :mygov_access_token
   # attr_accessible :title, :body
   
+  has_many :organizations
+  
   class << self
     
     def find_for_mygov_oauth(access_token, signed_in_resource = nil)

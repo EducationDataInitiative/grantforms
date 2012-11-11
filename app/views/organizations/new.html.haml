@@ -1,0 +1,11 @@
+.row
+  .twelve.columns
+    %h3
+      New Organization
+    = form_for @organization do |form|
+      = flash[:notice] if flash[:notice]
+      = flash[:error] if flash[:error]
+      = render :partial => 'form', :locals => {:form => form}
+      %p
+        = submit_tag 'Submit'
+        = link_to 'Cancel', organizations_path
