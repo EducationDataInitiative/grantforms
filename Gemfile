@@ -24,6 +24,12 @@ end
 
 group :test do
   gem 'rspec-rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'simplecov', :require => false
+  gem 'webmock'
 end
 
 group :assets do

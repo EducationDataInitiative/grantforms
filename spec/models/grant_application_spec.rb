@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe GrantApplication do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should belong_to :grant }
+  it { should belong_to :organization }
+  it { should belong_to :user }
 end
