@@ -1,7 +1,7 @@
 {
   "form": {
     "title": "Application for Federal Assistance",
-    "number": "SF-424"
+    "number": "SF-424",
     "form_fields": [
       {
         "name": "submission_type", "field_type": "select", "label": "Type of submission", "options": ["Preapplication", "Application", "Changed/Corrected Application"], "is_required": true
@@ -48,7 +48,7 @@
       }, {
         "name": "organization_division_name", "field_type": "string", "label": "Division name"
       }, {
-        "name": "contact_prefix", "field_type": "string", "label": "Prefix"
+        "name": "contact_prefix", "field_type": "select", "label": "Suffix", "options": ["Jr.", "Sr.", "M.D.", "Ph.D."]
       }, {
         "name": "contact_first_name", "field_type": "string", "label": "First name", "is_required": true
       }, {
@@ -56,7 +56,7 @@
       }, {
         "name": "contact_last_name", "field_type": "string", "label": "Last name", "is_required": true
       }, {
-        "name": "contact_suffix", "field_type": "string", "label": "Suffix"
+        "name": "contact_suffix", "field_type": "select", "label": "Suffix", "options": ["Jr.", "Sr.", "M.D.", "Ph.D."]
       }, {
         "name": "contact_title", "field_type": "string", "label": "Title"
       }, {
@@ -65,6 +65,74 @@
         "name": "contact_fax_number", "field_type": "string", "label": "Fax number"
       }, {
         "name": "contact_email", "field_type": "string", "label": "Email address", "is_required": true
+      }, {
+        "name": "applicant_type", "field_type": "select", "label": "Type of Applicant", "options": ["State Government", "County Government", "City or Township Government", "Special District Government", "Regional Organization", "U.S. Territory or Possesion", "Independent School District", "Public/State Controlled Institution of Higher Education", "Indian/Native American Tribal Government (Federally Recognized)", "Indian/Native American Tribal Government (Other than Federally Recognized)", "Indian/Native American Tribally Designated Organization", "Public/Indian Housing Authority", "Nonprofit with 501C3 IRS Status (Other than Institute of Higher Education)", "Nonprofit without 501C3 IRS Status (Other than Institute of Higher Education)", "Private Institute of Higher Education", "Individual", "For-Profit Organization (Other than Small Business)", "Small Business", "Hispanic-service Institution", "Historically Black College and Universities (HBCUs)", "Tribally Controller Colleges and Universities (TCCUs)", "Alaskan Native and Native Hawaiian Serving Institution", "Non-domestic (non-US) Entity", "Other (specify)"], "multiple": true, "is_required": true
+      }, {
+        "name": "applicant_type_other", "field_type": "string", "label": "Other (specify)"
+      }, {
+        "name": "federal_agency_name", "field_type": "string", "label": "Federal Agency name", "is_required": true
+      }, {
+        "name": "cfda_number", "field_type": "string", "label": "Catalog of Federal Domestic Assistance Number"
+      }, {
+        "name": "cfda_title", "field_type": "string", "label": "Catalog of Federal Domestic Assistance Title"
+      }, {
+        "name": "funding_opportunity_number", "field_type": "string", "label": "Funding Opportunity Number", "is_required": true
+      }, {
+        "name": "funding_opportunity_title", "field_type": "string", "label": "Funding Opportunity Title", "is_required": true
+      }, {
+        "name": "competition_identification_number", "field_type": "string", "label": "Competition Identification Number"
+      }, {
+        "name": "competition_identification_title", "field_type": "string", "label": "Competition Identification Title"
+      }, {
+        "name": "areas_affected_by_project", "field_type": "text", "label": "Areas affected by the project (cities, counties, states, etc.)"
+      }, {
+        "name": "project_title", "field_type": "text", "label": "Descriptive Title of Applicant's Project", "is_required": true
+      }, {
+        "name": "applicant_congressional_district", "field_type": "string", "label": "Congressional district of applicant", "is_required": true
+      }, {
+        "name": "project_congressional_districts", "field_type": "text", "label": "Congressional district(s) of project"
+      }, {
+        "name": "project_start_date", "field_type": "date", "label": "Proposed project start date", "is_required": true
+      }, {
+        "name": "project_end_date", "field_type": "date", "label": "Proposed project end date", "is_required": true
+      }, {
+        "name": "estimated_funding_federal", "field_type": "string", "label": "Estimated funding - federal", "is_required": true
+      }, {
+        "name": "estimated_funding_applicant", "field_type": "string", "label": "Estimated funding - applicant", "is_required": true
+      }, {
+        "name": "estimated_funding_state", "field_type": "string", "label": "Estimated funding - state", "is_required": true
+      }, {
+        "name": "estimated_funding_local", "field_type": "string", "label": "Estimated funding - local", "is_required": true
+      }, {
+        "name": "estimated_funding_other", "field_type": "string", "label": "Estimated funding - other", "is_required": true
+      }, {
+        "name": "estimated_funding_program_income", "field_type": "string", "label": "Estimated funding - program income", "is_required": true
+      }, {
+        "name": "subject_to_review", "field_type": "select", "label": "Is application subject to review by state under Executive Order 12372 Process?", "options": ["This application was made available to the State under the Executive Order 12372 Process for review on (enter date below)", "Program is subject to E.O. 12372 but has not been selected by the State for review", "Program is not covered by E.O. 12372"], "is_required": true
+      }, {
+        "name": "subject_to_review_on", "field_type": "date", "label": "Subject for review on"
+      }, {
+        "name": "delinquent_federal_debt", "field_type": "boolean", "label": "Is applicant delinquent on any federal debt? (if yes, provide explanation)", "is_required": true
+      }, {
+        "name": "delinquent_federal_debt_explanation", "field_type": "text", "label": "If yes, provide explanation."
+      }, {
+        "name": "authorized_representative_prefix", "field_type": "select", "label": "Prefix", "options": ["Mr.", "Mrs.", "Miss", "Ms.", "Dr.", "Rev.", "Prof."]
+      }, {
+        "name": "authorized_representative_first_name", "field_type": "string", "label": "First name", "is_required": true
+      }, {
+        "name": "authorized_representative_middle_name", "field_type": "string", "label": "Middle name"
+      }, {
+        "name": "authorized_representative_last_name", "field_type": "string", "label": "Last name", "is_required": true
+      }, {
+        "name": "authorized_representative_suffix", "field_type": "select", "label": "Suffix", "options": ["Jr.", "Sr.", "M.D.", "Ph.D."]
+      }, {
+        "name": "authorized_representative_title", "field_type": "string", "label": "Title", "is_required": true
+      }, {
+        "name": "authorized_representative_phone_number", "field_type": "string", "label": "Telephone number", "is_required": true
+      }, {
+        "name": "authorized_representative_fax_number", "field_type": "string", "label": "Fax number"
+      }, {
+        "name": "authorized_representative_email", "field_type": "string", "label": "Email", "is_required": true
       }
     ]
   }
