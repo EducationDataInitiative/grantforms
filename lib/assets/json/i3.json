@@ -1,7 +1,7 @@
 {
   "form": {
-    "title": "Application for Federal Assistance",
-    "number": "SF-424",
+    "title": "Office of Innovation and Improvement - i3 Applicant Information",
+    "number": "i3",
     "form_fields": [
       {
         "name": "lead_applicant_name", "field_type": "string", "label": "Lead applicant name", "is_required": true
