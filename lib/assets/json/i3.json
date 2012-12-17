@@ -1,0 +1,37 @@
+{
+  "form": {
+    "title": "Application for Federal Assistance",
+    "number": "SF-424",
+    "form_fields": [
+      {
+        "name": "lead_applicant_name", "field_type": "string", "label": "Lead applicant name", "is_required": true
+      }, {
+        "name": "lead_applicant_city", "field_type": "string", "label": "Lead applicant city", "is_required": true
+      }, {
+        "name": "lead_applicant_state", "field_type": "us_state", "label": "Lead applicant state", "is_required": true
+      }, {
+        "name": "eligible_applicant_type", "field_type": "select", "label": "Eligible applicant type", "options": ["LEA", "Nonprofit with LEA", "Nonprofit with consortium of schools"], "is_required": true
+      }, {
+        "name": "multiple_i3_applications", "field_type": "boolean", "label": "Have you applied for more than one i3 grant?", "options": ["Yes", "No"], "is_required": true
+      }, {
+        "name": "preapplication_pr_award_number", "field_type": "string", "label": "Pre-application PR Award number", "is_required": true
+      }, {
+        "name": "project_title", "field_type": "string", "label": "Project title", "is_required": true
+      }, {
+        "name": "grant_request_type", "field_type": "select", "label": "Type of grant requested", "options": ["Development"], "is_required": true
+      }, {
+        "name": "grant_award_length", "field_type": "select", "label": "Length of requested grant award", "options": [["3 years", "3"], ["4 years", "4"], ["5 years", 5]], "is_required": true
+      }, {
+        "name": "absolute_priority", "field_type": "select", "label": "Select the ONE Absolute Priority (AP) that you are addressing in your application", "options": [["Effective Teachers and Principals", "AP1"], ["Promoting STEM Education", "AP2"], ["Improving Parent and Family Engagement", "AP3"], ["Persistently Low-Performing Schools", "AP4"], ["Achievement and Graduation Rates", "AP5"]], "is_required": true
+      }, {
+        "name": "competitive_preference_priorities", "field_type": "select", "label": "Select up to two Competitive Preference Priorities (CPP) that you are addressing in your application", "options": [["CPP 6: Innovations for Improving Early Learning Outcomes (zero or one point)", "CPP6"], ["CPP 7: Innovations that Support College Access and Success (zero or one point)", "CPP7"], ["CPP 8: Innovations to Address the Unique Learning Needs of Students with Disabilities and Limited English Proficient Students (zero or one Point)", "CPP8"], ["CPP 9: Improving Productivity (zero or one point)", "CPP9"], ["CPP 10: Technology (zero or one point)", "CPP10"]], "multiple": true, "is_required": true
+      }, {
+        "name": "total_students_served", "field_type": "string", "label": "Total number of students to be served by the proposed project", "is_required": true
+      }, {
+        "name": "grade_levels_served", "field_type": "select", "label": "Student grade levels to be served by the proposed project (select all that apply):", "options": [["Birth-Pre K", "prek"], ["Kindergarten", "K"], ["First", "1"], ["Second", "2"], ["Third", "3"], ["Fourth", "4"], ["Fifth", "5"], ["Sixth", "6"], ["Seventh", "7"], ["Eighth", "8"], ["Ninth", "9"], ["Tenth", "10"], ["Eleventh", "11"], ["Twelfth", "12"], ["Post-Secondary", "postsecondary"]], "multiple": true, "is_required": true
+      }, {
+        "name": "project_description", "field_type": "text", "label": "Project description", "description": "In 2000 characters or less, please provide a brief description of the project you wish to propose. Be sure to include a summary of project objectives and expected outcomes, along with any special project features.", "is_required": true
+      }
+    ]
+  }
+}
