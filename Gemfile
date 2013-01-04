@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '1.9.3'
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.10'
 gem 'omniauth-mygov', :git => 'https://github.com/GSA-OCSIT/omniauth-mygov.git'
 gem 'devise'
 gem 'rails_admin'
