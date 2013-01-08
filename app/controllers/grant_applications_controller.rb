@@ -14,6 +14,7 @@ class GrantApplicationsController < ApplicationController
   
   def create
     @grant_application = @user.grant_applications.new(params[:grant_application])
+    @grant_application.organization.user_id = @user.id if @grant_application.organization
     @grant_application.grant = @grant
     if @grant_application.save
       flash[:notice] = "Successfully created application"
