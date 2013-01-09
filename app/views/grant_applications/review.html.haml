@@ -6,6 +6,33 @@
       Review
 .row
   .twelve.columns
+    %h4
+      Organization information 
+    %table.eight
+      %tbody
+        - @grant_application.organization.attributes.each do |organization_attribute|
+          %tr
+            %td= organization_attribute.first
+            %td= organization_attribute.last
+    %h4
+      User information
+    %table.eight
+      %tbody
+        - @grant_application.user.attributes.each do |user_attribute|
+          %tr
+            %td= user_attribute.first
+            %td= user_attribute.last
+    %h4
+      Grant application information
+    %table.eight
+      %tbody
+        - @grant_application.data.each do |key, value|
+          %tr
+            %td= key
+            - if value.is_a?(Array)
+              %td= value.join("<br/>").html_safe
+            - else
+              %td= value
     %p
       Please review the information you specified for this grant.  When you're finished, click submit to submit your grant application.
       = button_to 'Submit your grant application', grant_application_finish_path(@grant, @grant_application)
