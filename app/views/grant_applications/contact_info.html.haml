@@ -10,34 +10,35 @@
       Here is the contact information we have on file.  Edit it if you like.
     = form_tag grant_application_path(@grant, @grant_application), :method => :put do
       = hidden_field_tag "grant_application_page", "contact_info"
+      = hidden_field_tag "redirect", params[:redirect]
       %p
         = label_tag "Prefix"
-        = text_field_tag "grant_application[data][prefix]", @profile["prefix"]
+        = text_field_tag "grant_application[data][prefix]", @grant_application.data["prefix"] || @profile["prefix"]
       %p
         = label_tag "First name"
-        = text_field_tag "grant_application[data][first_name]", @profile["first_name"]
+        = text_field_tag "grant_application[data][first_name]", @grant_application.data["first_name"] || @profile["first_name"]
       %p
         = label_tag "Middle name"
-        = text_field_tag "grant_application[data][middle_name]", @profile["middle_name"]
+        = text_field_tag "grant_application[data][middle_name]", @grant_application.data["middle_name"] || @profile["middle_name"]
       %p
         = label_tag "Last name"
-        = text_field_tag "grant_application[data][last_name]", @profile["last_name"]
+        = text_field_tag "grant_application[data][last_name]", @grant_application.data["last_name"] || @profile["last_name"]
       %p
         = label_tag "Suffix"
-        = text_field_tag "grant_application[data][suffix]", @profile["suffix"]
+        = text_field_tag "grant_application[data][suffix]", @grant_application.data["suffix"] || @profile["suffix"]
       %p
         = label_tag "Organizational Affiliation"
-        = text_field_tag "grant_application[data][organizational_affiliation]"
+        = text_field_tag "grant_application[data][organizational_affiliation]", @grant_application.data["organizational_affiliation"]
       %p
         = label_tag "Telephone number"
-        = text_field_tag "grant_application[data][phone]", @profile["phone"]
+        = text_field_tag "grant_application[data][phone]", @grant_application.data["phone"] || @profile["phone"]
       %p
         = label_tag "Fax number"
-        = text_field_tag "grant_application[data][fax]"
+        = text_field_tag "grant_application[data][fax]", @grant_application.data["fax"]
       %p
         = label_tag "Email address"
-        = text_field_tag "grant_application[data][email]", @profile["email"]
+        = text_field_tag "grant_application[data][email]", @grant_application.data["email"] || @profile["email"]
       %p
         = submit_tag "Submit"
-      
-        
+
+

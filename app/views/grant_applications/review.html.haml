@@ -7,32 +7,188 @@
 .row
   .twelve.columns
     %h4
-      Organization information 
+      Organization information
+    = link_to("Edit", edit_organization_path(@grant_application.organization, |
+              :redirect_to => grant_application_review_path(@grant, @grant_application)))
     %table.eight
       %tbody
-        - @grant_application.organization.attributes.each do |organization_attribute|
+        - %w{name ein duns address address2 city state province country zip department_name division_name}.each do |key|
           %tr
-            %td= organization_attribute.first
-            %td= organization_attribute.last
+            %td= key.humanize
+            %td= @grant_application.organization[key]
+
     %h4
-      User information
+      Contact information
+    = link_to("Edit", grant_application_contact_info_path(@grant, @grant_application, redirect: "review"))
     %table.eight
       %tbody
-        - @grant_application.user.attributes.each do |user_attribute|
-          %tr
-            %td= user_attribute.first
-            %td= user_attribute.last
+        %tr
+          %td Prefix
+          %td= @grant_application.data["prefix"]
+        %tr
+          %td First name
+          %td= @grant_application.data["first_name"]
+        %tr
+          %td Middle name
+          %td= @grant_application.data["middle_name"]
+        %tr
+          %td Last name
+          %td= @grant_application.data["last_name"]
+        %tr
+          %td Suffix
+          %td= @grant_application.data["suffix"]
+        %tr
+          %td Organizational affiliation
+          %td= @grant_application.data["organizational_affiliation"]
+        %tr
+          %td Phone
+          %td= @grant_application.data["phone"]
+        %tr
+          %td Fax
+          %td= @grant_application.data["fax"]
+        %tr
+          %td Email
+          %td= @grant_application.data["email"]
+
     %h4
-      Grant application information
+      Page 1
+    = link_to("Edit", grant_application_page_1_path(@grant, @grant_application, redirect: "review"))
     %table.eight
       %tbody
-        - @grant_application.data.each do |key, value|
-          %tr
-            %td= key
-            - if value.is_a?(Array)
-              %td= value.join("<br/>").html_safe
-            - else
-              %td= value
+        %tr
+          %td Submission type
+          %td= @grant_application.data["submission_type"].humanize
+        %tr
+          %td Application type
+          %td= @grant_application.data["application_type"].humanize
+        %tr
+          %td Applicant identifier
+          %td= @grant_application.data["applicant_identifier"]
+        %tr
+          %td Federal entity identifier
+          %td= @grant_application.data["federal_entity_identifier"]
+        %tr
+          %td Federal award identifier
+          %td= @grant_application.data["federal_award_identifier"]
+
+    %h4
+      Page 2
+    = link_to("Edit", grant_application_page_2_path(@grant, @grant_application, redirect: "review"))
+    %table.eight
+      %tbody
+        %tr
+          %td Applicant type
+          %td
+            - @grant_application.data["applicant_type"].each do |key, val|
+              - if key == "other-specify"
+                Other (#{@grant_application.data["other_specify"]}) <br />
+              - else
+                #{key.humanize} <br />
+        %tr
+          %td Name of federal agency
+          %td= @grant_application.data["name_of_federal_agency"]
+        %tr
+          %td Cfda number
+          %td= @grant_application.data["cfda_number"]
+        %tr
+          %td Cfda title
+          %td= @grant_application.data["cfda_title"]
+        %tr
+          %td Funding opportunity number
+          %td= @grant_application.data["funding_opportunity_number"]
+        %tr
+          %td Funding opportunity title
+          %td= @grant_application.data["funding_opportunity_title"]
+        %tr
+          %td Competition identification number
+          %td= @grant_application.data["competition_identification_number"]
+        %tr
+          %td Competition identification title
+          %td= @grant_application.data["competition_identification_title"]
+        %tr
+          %td Areas affected
+          %td= @grant_application.data["areas_affected"]
+        %tr
+          %td Descriptive title of project
+          %td= @grant_application.data["project_description"]
+        %tr
+          %td Applicant congressional district
+          %td= @grant_application.data["applicant_congressional_district"]
+        %tr
+          %td Project congressional district
+          %td= @grant_application.data["project_congressional_district"]
+        %tr
+          %td Proposed start date
+          %td= prettify_date_hash(@grant_application.data["proposed_start_date"])
+        %tr
+          %td Proposed end date
+          %td= prettify_date_hash(@grant_application.data["proposed_end_date"])
+        %tr
+          %td Estimated funding federal
+          %td= @grant_application.data["estimated_funding_federal"]
+        %tr
+          %td Estimated funding applicant
+          %td= @grant_application.data["estimated_funding_applicant"]
+        %tr
+          %td Estimated funding state
+          %td= @grant_application.data["estimated_funding_state"]
+        %tr
+          %td Estimated funding local
+          %td= @grant_application.data["estimated_funding_local"]
+        %tr
+          %td Estimated funding other
+          %td= @grant_application.data["estimated_funding_other"]
+        %tr
+          %td Estimated funding program income
+          %td= @grant_application.data["estimated_funding_program_income"]
+        %tr
+          %td Estimated funding total
+          %td= @grant_application.data["estimated_funding_total"]
+        %tr
+          %td Subject to review
+          %td
+            = @grant_application.data["subject_to_review"].humanize
+            - if @grant_application.data["subject_to_review"] == "subject_and_reviewed"
+              = prettify_date_hash(@grant_application.data["review_date"])
+        %tr
+          %td Delinquent debt details
+          %td= @grant_application.data["delinquent_debt_details"]
+
+    %h4
+      Page 3
+    = link_to("Edit", grant_application_page_3_path(@grant, @grant_application, redirect: "review"))
+    %table.eight
+      %tbody
+        %tr
+          %td Eligible applicant type
+          %td= (@grant_application.data["eligible_applicant_type"] || "").humanize
+        %tr
+          %td Multiple i3 applications
+          %td= @grant_application.data["multiple_i3_applications"] ? "Yes" : "No"
+        %tr
+          %td Preapplication pr award number
+          %td= @grant_application.data["preapplication_pr_award_number"]
+        %tr
+          %td Grant request type
+          %td= (@grant_application.data["grant_request_type"] || "").humanize
+        %tr
+          %td Grant award length
+          %td= !@grant_application.data["grant_award_length"].blank? ? @grant_application.data["grant_award_length"] + " years" : ""
+        %tr
+          %td Absolute priority
+          %td= @grant_application.data["absolute_priority"]
+        %tr
+          %td Competitive preference priorities
+          %td!= @grant_application.data["competitive_preference_priorities"].is_a?(Array) ? @grant_application.data["competitive_preference_priorities"].join("<br />") : @grant_application.data["competitive_preference_priorities"]
+        %tr
+          %td Total students served
+          %td= @grant_application.data["total_students_served"]
+        %tr
+          %td Grade levels served
+          %td!= @grant_application.data["grade_levels_served"].is_a?(Array) ? @grant_application.data["grade_levels_served"].join("<br />") : @grant_application.data["grade_levels_served"]
+        %tr
+          %td Project Description
+          %td= @grant_application.data["project_description"]
     %p
       Please review the information you specified for this grant.  When you're finished, click submit to submit your grant application.
       = button_to 'Submit your grant application', grant_application_finish_path(@grant, @grant_application)

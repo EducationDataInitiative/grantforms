@@ -5,7 +5,8 @@
     = form_for @organization do |form|
       = flash[:notice] if flash[:notice]
       = flash[:error] if flash[:error]
+      = hidden_field_tag "redirect_to", params[:redirect_to]
       = render :partial => 'form', :locals => {:form => form}
       %p
         = form.submit
-        = link_to 'Cancel', organizations_path 
+        = link_to 'Cancel', organizations_path

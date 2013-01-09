@@ -10,35 +10,42 @@
       Here's more information we need from you to apply for this grant.
     = form_tag grant_application_path(@grant, @grant_application), :method => :put do
       = hidden_field_tag "grant_application_page", "page_1"
+      = hidden_field_tag "redirect", params[:redirect]
       %p
         Type of submission
         = label_tag "grant_application[data][submission_type][preapplication]" do
-          = radio_button_tag "grant_application[data][submission_type]", "preapplication"
+          = radio_button_tag "grant_application[data][submission_type]", "preapplication", |
+                             @grant_application.data["submission_type"] == "preapplication"
           Preapplication
         = label_tag "grant_application[data][submission_type][application]" do
-          = radio_button_tag "grant_application[data][submission_type]", "application"
+          = radio_button_tag "grant_application[data][submission_type]", "application", |
+                             @grant_application.data["submission_type"] == "application"
           Application
         = label_tag "grant_application[data][submission_type][changed]" do
-          = radio_button_tag "grant_application[data][submission_type]", "changed"
+          = radio_button_tag "grant_application[data][submission_type]", "changed", |
+                             @grant_application.data["submission_type"] == "changed"
           Changed/corrected application
       %p
         Type of application
         = label_tag "grant_application[data][application_type][new]" do
-          = radio_button_tag "grant_application[data][application_type]", "new"
+          = radio_button_tag "grant_application[data][application_type]", "new", |
+                             @grant_application.data["application_type"] == "new"
           New
         = label_tag "grant_application[data][application_type][continuation]" do
-          = radio_button_tag "grant_application[data][application_type]", "continuation"
+          = radio_button_tag "grant_application[data][application_type]", "continuation", |
+                             @grant_application.data["application_type"] == "continuation"
           Continuation
         = label_tag "grant_application[data][application_type][revision]" do
-          = radio_button_tag "grant_application[data][application_type]", "revision"
+          = radio_button_tag "grant_application[data][application_type]", "revision", |
+                             @grant_application.data["application_type"] == "revision"
           Revision
       %p
         = label_tag "Applicant identifier"
-        = text_field_tag "grant_application[data][applicant_identifier]"
+        = text_field_tag "grant_application[data][applicant_identifier]", @grant_application.data["applicant_identifier"]
       %p
         = label_tag "Federal Entity Identifier"
-        = text_field_tag "grant_application[data][federal_entity_identifier]"
+        = text_field_tag "grant_application[data][federal_entity_identifier]", @grant_application.data["federal_entity_identifier"]
       %p
         = label_tag "Federal Award Identifier"
-        = text_field_tag "grant_application[data][federal_award_identifier]"
+        = text_field_tag "grant_application[data][federal_award_identifier]", @grant_application.data["federal_award_identifier"]
       = submit_tag "Submit"
