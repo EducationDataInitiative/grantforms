@@ -40,6 +40,7 @@ class GrantApplicationsController < ApplicationController
   end
 
   def update
+    clear_fields(params[:grant_application_page])
     @grant_application.data = {} if @grant_application.data.nil?
     @grant_application.data.merge!(params[:grant_application][:data] || {})
     if @grant_application.save
@@ -78,6 +79,18 @@ class GrantApplicationsController < ApplicationController
       grant_application_page_3_path(@grant, @grant_application)
     when "page_3"
       grant_application_review_path(@grant, @grant_application)
+    end
+  end
+
+  def clear_fields(current_action)
+    case current_action
+    when "page_2"
+      @grant_application.data.delete('applicant_type')
+      @grant_application.data.delete('delinquent_debt')
+    when "page_3"
+      @grant_application.data.delete('multiple_i3_applications')
+      @grant_application.data.delete('grade_levels_served')
+      @grant_application.data.delete('competitive_preference_priorities')
     end
   end
 end
