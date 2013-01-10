@@ -57,10 +57,10 @@
       %tbody
         %tr
           %td Submission type
-          %td= @grant_application.data["submission_type"].humanize
+          %td= (@grant_application.data["submission_type"] || "").humanize
         %tr
           %td Application type
-          %td= @grant_application.data["application_type"].humanize
+          %td= (@grant_application.data["application_type"] || "").humanize
         %tr
           %td Applicant identifier
           %td= @grant_application.data["applicant_identifier"]
@@ -79,7 +79,7 @@
         %tr
           %td Applicant type
           %td
-            - @grant_application.data["applicant_type"].each do |key, val|
+            - (@grant_application.data["applicant_type"] || []).each do |key, val|
               - if key == "other-specify"
                 Other (#{@grant_application.data["other_specify"]}) <br />
               - else
