@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '1.9.3'
 gem 'rails', '3.2.11'
+gem 'jquery-rails'
 gem 'omniauth-mygov', :git => 'https://github.com/GSA-OCSIT/omniauth-mygov.git'
 gem 'devise'
 gem 'rails_admin'
@@ -14,12 +15,10 @@ group :development do
   gem 'rspec-rails'
   gem 'haml-rails'
   gem 'quiet_assets'
-  gem 'hpricot'
-  gem 'ruby_parser'
 end
 
 group :production do
-  gem 'pg'
+  gem 'mysql2'
 end
 
 group :test do
@@ -37,5 +36,3 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
-
-gem 'jquery-rails'
