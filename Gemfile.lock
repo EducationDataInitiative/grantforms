@@ -93,7 +93,7 @@ GEM
     jquery-ui-rails (2.0.2)
       jquery-rails
       railties (>= 3.1.0)
-    json (1.7.6)
+    json (1.7.7)
     jwt (0.1.5)
       multi_json (>= 1.0)
     kaminari (0.14.1)
@@ -249,6 +249,7 @@ DEPENDENCIES
   devise
   haml-rails
   jquery-rails
+  json (= 1.7.7)
   launchy
   mysql2
   omniauth-mygov!
